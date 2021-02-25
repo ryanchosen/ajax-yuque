@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX GET 请求</title>
+  <style>
+    #result{
+      width:200px;
+      height:100px;
+      border:solid 1px #90b;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">点击发送GET请求</button>
+<div id="result"></div>
+
+<script>
+  btn.addEventListener('click',function(){
+    const xhr=new XMLHttpRequest()
+    xhr.open('GET','http://127.0.0.1:8001/server?a=100&b=200')
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState===4){
+        if(xhr.status>=200&&xhr.status<300){
+          result.innerHTML=xhr.response
+        }else{
+          console.log('2')
+        }
+      }
+    }
+    xhr.send()
+  })
+</script>
+</body>
+</html>

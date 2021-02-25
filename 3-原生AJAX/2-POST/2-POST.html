@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX POST 请求</title>
+  <style>
+    #result{
+      width:200px;
+      height:100px;
+      border:solid 1px #90b;
+    }
+  </style>
+</head>
+<body>
+<div>鼠标移入以触发onmouseover事件</div>
+<div id="result"></div>
+
+<script>
+  result.addEventListener('mouseover',function(){
+    const xhr=new XMLHttpRequest()
+    xhr.open('POST','http://127.0.0.1:8001/server')
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState===4){
+        if(xhr.status>=200&&xhr.status<300){
+          result.innerHTML=xhr.response
+        }else{
+          console.log('2')
+        }
+      }
+    }
+    xhr.send('a=100&b=200&c=300')
+  })
+</script>
+</body>
+</html>
