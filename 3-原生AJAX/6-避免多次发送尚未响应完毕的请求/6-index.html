@@ -15,6 +15,7 @@
     xhr.open('GET','http://127.0.0.1:8001/test')
     xhr.onreadystatechange=function (){
       if(xhr.readyState===4){
+        debugger
         if(xhr.status>=200&&xhr.status<300){
           console.log(xhr.response)
         }
