@@ -24,13 +24,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/3-原生AJAX/3-JSON" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/3-原生AJAX/5-超时与网络异常" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ryan\Desktop\ajax\3-原生AJAX\5-超时与网络异常" />
       <recent name="C:\Users\Ryan\Desktop\ajax\3-原生AJAX\3-JSON" />
       <recent name="C:\Users\Ryan\Desktop\ajax\3-原生AJAX\2-POST" />
     </key>
@@ -58,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614219752164</updated>
       <workItem from="1614219753190" duration="1907000" />
-      <workItem from="1614221683015" duration="5786000" />
+      <workItem from="1614221683015" duration="9817000" />
     </task>
     <servers />
   </component>
@@ -82,13 +83,13 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1515" height="427" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1614221402814" />
-    <state x="270" y="77" key="SettingsEditor" timestamp="1614221500471">
+    <state x="270" y="77" key="SettingsEditor" timestamp="1614245582994">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="270" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1614221500471" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614220961249">
+    <state x="270" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1614245582994" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614245229151">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614220961249" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614245229151" />
   </component>
 </project>

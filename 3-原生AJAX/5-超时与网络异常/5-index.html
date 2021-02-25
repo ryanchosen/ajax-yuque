@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>超时与网络异常</title>
+  <style>
+    #result{
+      width:200px;
+      height:100px;
+      border:solid 1px #90b;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">点击发送请求</button>
+<div id="result"></div>
+<script>
+  btn.addEventListener('click',function (){
+    let xhr=new XMLHttpRequest();
+    xhr.responseType='json'
+    // 超过2s会自动取消请求
+    xhr.timeout=2000;
+    xhr.ontimeout=function (){
+      alert('网络异常，请求已取消')
+    }
+    // 可以把chrome中的网络模拟成断网以便测试
+    xhr.onerror=function (){
+      alert('网络异常')
+    }
+    xhr.open('GET','http://127.0.0.1:8001/test');
+    xhr.onreadystatechange=function (){
+      if(xhr.readyState===4){
+        if(xhr.status>=200&&xhr.status<300){
+          result.innerHTML=xhr.response.name
+        }else{
+          console.log(2)
+        }
+      }
+    }
+    xhr.send()
+  })
+</script>
+</body>
+</html>
