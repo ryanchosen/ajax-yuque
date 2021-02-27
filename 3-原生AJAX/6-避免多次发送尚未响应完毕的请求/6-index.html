@@ -5,23 +5,35 @@
   <title>取消请求</title>
 </head>
 <body>
+<p>demo1: 发起 -> 手动取消</p>
+<p>demo2: 多次发起 -> 观察network tab</p>
+<p>浏览器会在3s后返回一个结果</p>
 <button>请求</button>
 <button>取消请求</button>
 <script>
   let btns=document.getElementsByTagName('button')
   let xhr=null;
-  btns[0].addEventListener('click',()=>{
+  let isSending=false;
+
+  function ajax(method,url){
+    isSending=true
     xhr=new XMLHttpRequest();
-    xhr.open('GET','http://127.0.0.1:8001/test')
+    xhr.open(method,url)
     xhr.onreadystatechange=function (){
-      if(xhr.readyState===4){
-        debugger
-        if(xhr.status>=200&&xhr.status<300){
+      if(xhr.readyState===4){ // 拿到响应结果
+        isSending=false
+        if(xhr.status>=200&&xhr.status<300){ // 且是一个成功的响应结果
           console.log(xhr.response)
         }
       }
     }
     xhr.send()
+  }
+
+  btns[0].addEventListener('click',()=>{
+    if(isSending) xhr.abort()
+    ajax('GET','http://127.0.0.1:8001/test')
+
   })
   btns[1].addEventListener('click',()=>{
     xhr.abort()
