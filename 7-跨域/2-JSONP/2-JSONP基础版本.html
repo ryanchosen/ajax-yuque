@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案例</title>
+</head>
+<body>
+<div>demo模拟向服务器端发送请求 检测用户名是否存在</div>
+<br>
+<div>点击input框后失焦触发</div>
+<br>
+<label>用户名: <input type="text" id="input"></label>
+<p id="p"></p>
+<script>
+  //声明 handle 函数 留待后端返回的JS代码调用
+  function handle(data) {
+    input.style.border = 'solid 1px #f00';
+    //修改 p 标签的提示文本
+    p.innerHTML = data.msg;
+  }
+
+  //绑定事件
+  input.onblur = function () {
+    //获取用户的输入值
+    let username = this.value;
+
+    // 动态创建 script 标签 三步骤 创建->设置src->挂载
+    const script = document.createElement('script');
+    script.src = 'http://127.0.0.1:8001/check-username';
+    document.body.appendChild(script);
+  };
+</script>
+</body>
+</html>

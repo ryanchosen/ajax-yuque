@@ -11,33 +11,33 @@
 <button>请求</button>
 <button>取消请求</button>
 <script>
-  let btns=document.getElementsByTagName('button')
-  let xhr=null;
-  let isSending=false;
+  let btns = document.getElementsByTagName('button');
+  let xhr = null;
+  let isSending = false;
 
-  function ajax(method,url){
-    isSending=true
-    xhr=new XMLHttpRequest();
-    xhr.open(method,url)
-    xhr.onreadystatechange=function (){
-      if(xhr.readyState===4){ // 拿到响应结果
-        isSending=false
-        if(xhr.status>=200&&xhr.status<300){ // 且是一个成功的响应结果
-          console.log(xhr.response)
+
+  function ajax(method, url) {
+    xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) { // 拿到响应结果
+        isSending = false;
+        if (xhr.status >= 200 && xhr.status < 300) { // 且是一个成功的响应结果
+          console.log(xhr.response);
         }
       }
-    }
-    xhr.send()
+    };
+    xhr.send();
   }
 
-  btns[0].addEventListener('click',()=>{
-    if(isSending) xhr.abort()
-    ajax('GET','http://127.0.0.1:8001/test')
-
-  })
-  btns[1].addEventListener('click',()=>{
-    xhr.abort()
-  })
+  btns[0].addEventListener('click', () => {
+    if (isSending) xhr.abort();
+    isSending = true;
+    ajax('GET', 'http://127.0.0.1:8001/test');
+  });
+  btns[1].addEventListener('click', () => {
+    xhr.abort();
+  });
 </script>
 </body>
 </html>
